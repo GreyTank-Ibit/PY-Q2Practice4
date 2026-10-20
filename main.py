@@ -1,11 +1,11 @@
 from pyscript import document,display
 
 def add_brand(e):
-    document.getElementByID('output1').innerHTML = " "
+    document.getElementById('output1').innerHTML = " "
    
-    brands={'Uniqlo', 'Bench', 'Zara'}
+    brands={'Uniqlo', 'Bench', 'Zara', 'H&M'}
 
-    input_brand= document.getElementByID('input1').value
+    input_brand= document.getElementById('input1').value
 
     new_brand_set = {input_brand}
 
@@ -13,8 +13,8 @@ def add_brand(e):
 
     total_brands = len(brands | new_brand_set)
 
-    brand_list = "<br>".join(sorted(all_brands ))
+    brand_list = "<br>".join(sorted(all_brands))
 
     #display
-    document.getElementByID('output1').innerHTML = f'All brands: <br> {brand_list}'
+    document.getElementById('output1').innerHTML = f'All brands: <br> {brand_list}'
     display(f'Total brands: {total_brands}', target="output1")
